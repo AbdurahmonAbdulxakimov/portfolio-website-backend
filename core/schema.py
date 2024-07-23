@@ -7,11 +7,11 @@ from .generator import BothHttpAndHttpsSchemaGenerator
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="UIC API",
+        title="Portfolio API",
         default_version="v1",
-        description="UIC Group",
+        description="Abdurahmon Abdulxakimov",
         terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="info@uic.group"),
+        contact=openapi.Contact(email="avabdurahmon@gmail.com"),
         license=openapi.License(name="BSD License"),
     ),
     public=True,

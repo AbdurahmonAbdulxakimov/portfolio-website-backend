@@ -9,23 +9,24 @@ from .schema import swagger_urlpatterns
 
 
 class LoginForm(AuthenticationForm):
-    captcha = fields.ReCaptchaField()
-
-    def clean(self):
-        captcha = self.cleaned_data.get("captcha")
-        if not captcha:
-            return
-        return super().clean()
+    # captcha = fields.ReCaptchaField()
+    pass
+    # def clean(self):
+    #     captcha = self.cleaned_data.get("captcha")
+    #     if not captcha:
+    #         return
+    #     return super().clean()
 
 
 admin.site.login_form = LoginForm
 admin.site.login_template = "login.html"
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path("admin/telegram/bot/", include("apps.tgbot.urls")),
     path("api/v1/common/", include("apps.common.urls", namespace="common")),
-    path("api/v1/content/", include("apps.contents.urls", namespace="contents"))
+    path("api/v1/content/", include("apps.contents.urls", namespace="contents")),
+    path("admin/", admin.site.urls)
 ]
 
 urlpatterns += swagger_urlpatterns

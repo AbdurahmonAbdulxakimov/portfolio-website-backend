@@ -48,7 +48,8 @@ DJANGO_APPS = [
 
 CUSTOM_APPS = [
     "apps.common",
-    "apps.contents"
+    "apps.contents",
+    "apps.tgbot"
 ]
 
 THIRD_PARTY_APPS = [
@@ -236,3 +237,8 @@ CKEDITOR_CONFIGS = {
         ),
     },
 }
+
+# Bot settings
+WEBHOOK_URL = env.str("WEBHOOK_URL")
+BACKEND_HOST_URL = env.str("BACKEND_HOST_URL", "http://localhost:8000")
+

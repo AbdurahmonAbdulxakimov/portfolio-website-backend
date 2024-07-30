@@ -54,12 +54,12 @@ services:
     image: redis:7.2.4-alpine
     restart: always
 
-  celery:
-    container_name: ${PROJECT_NAME}_celery
-    <<: *web
-    ports: [ ]
-    command: celery -A core worker --beat --scheduler django --loglevel=info
-    restart: always
+#  celery:
+#    container_name: ${PROJECT_NAME}_celery
+#    <<: *web
+#    ports: [ ]
+#    command: celery -A core worker --beat --scheduler django --loglevel=info
+#    restart: always
 
 volumes:
   postgres_data:

@@ -10,6 +10,7 @@ class SiteContentListView(ListAPIView):
 class SiteContentRetriveView(RetrieveAPIView):
     serializer_class = serializers.SiteContentSerializer
     queryset = models.SiteContent.objects.all()
+    lookup_field = "key"
 
 
 class SkillListView(ListAPIView):
